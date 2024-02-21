@@ -5,4 +5,9 @@
     <string name="lbl_route_second">Second</string>
     <string name="lbl_route_third">Third</string>
     <string name="lbl_route_fourth">Fourth</string>
+
+    <string name="lbl_type_1_product">Type 1</string>
+    <string name="lbl_type_2_product">Type 2</string>
+    <string name="lbl_type_3_product">Type 3</string>
+    <string name="lbl_type_4_product">Type 4</string>
 </resources>
