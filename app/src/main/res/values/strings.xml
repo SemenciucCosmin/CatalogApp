@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CatalogApp</string>
+
+    <string name="lbl_route_first">First</string>
+    <string name="lbl_route_second">Second</string>
+    <string name="lbl_route_third">Third</string>
+    <string name="lbl_route_fourth">Fourth</string>
 </resources>
