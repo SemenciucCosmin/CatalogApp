@@ -13,6 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogapp.R
+import com.example.catalogapp.presentation.theme.CatalogAppTheme
 
 private const val ENABLED_ALPHA_FACTOR = 1f
 private const val DISABLED_ALPHA_FACTOR = 0.5f
@@ -24,9 +25,15 @@ fun ListNavigationButton(
     icon: Painter?,
     isEnabled: Boolean = true,
 ) {
-    val alpha = if (isEnabled) ENABLED_ALPHA_FACTOR else DISABLED_ALPHA_FACTOR
+    val modifier = if (isEnabled) {
+        Modifier.alpha(ENABLED_ALPHA_FACTOR).clickable { onClick() }
+    } else {
+        Modifier.alpha(DISABLED_ALPHA_FACTOR)
+    }
+
 
     ListItem(
+        modifier = modifier,
         headlineContent = { Text(text = text) },
         leadingContent = {
             icon?.let {
@@ -44,30 +51,31 @@ fun ListNavigationButton(
                 modifier = Modifier.size(20.dp)
             )
         },
-        modifier = Modifier
-            .clickable { onClick() }
-            .alpha(alpha),
     )
 }
 
 @Preview
 @Composable
 private fun ListNavigationButtonEnabledPreview() {
-    ListNavigationButton(
-        text = "Button",
-        onClick = { },
-        icon = painterResource(R.drawable.ic_top_app_bar),
-        isEnabled = true
-    )
+    CatalogAppTheme {
+        ListNavigationButton(
+            text = "Button",
+            onClick = { },
+            icon = painterResource(R.drawable.ic_top_app_bar),
+            isEnabled = true
+        )
+    }
 }
 
 @Preview
 @Composable
 private fun ListNavigationButtonDisabledPreview() {
-    ListNavigationButton(
-        text = "Button",
-        onClick = { },
-        icon = painterResource(R.drawable.ic_top_app_bar),
-        isEnabled = false
-    )
+    CatalogAppTheme {
+        ListNavigationButton(
+            text = "Button",
+            onClick = { },
+            icon = painterResource(R.drawable.ic_top_app_bar),
+            isEnabled = false
+        )
+    }
 }
