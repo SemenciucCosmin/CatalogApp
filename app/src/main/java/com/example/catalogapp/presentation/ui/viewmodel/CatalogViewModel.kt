@@ -10,7 +10,7 @@ class CatalogViewModel : ViewModel() {
     fun getRandomProducts(): List<Product> {
         val products = mutableListOf<Product>()
 
-        for (index in 0..9) {
+        for (index in 0..99) {
             products.add(
                 Product(
                     id = UUID.randomUUID().toString(),
