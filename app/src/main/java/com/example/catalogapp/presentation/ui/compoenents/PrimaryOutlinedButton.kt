@@ -1,27 +1,32 @@
 package com.example.catalogapp.presentation.ui.compoenents
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Button
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.catalogapp.presentation.theme.CatalogAppTheme
 
 @Composable
-fun PrimaryButton(
+fun PrimaryOutlinedButton(
     modifier: Modifier = Modifier,
     text: String,
+    cornerRadius: Dp,
     onClick: () -> Unit,
     enabled: Boolean = true,
 ) {
-    Button(
+    OutlinedButton(
         onClick = onClick,
         enabled = enabled,
-        shape = MaterialTheme.shapes.extraSmall,
+        shape = RoundedCornerShape(cornerRadius),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
         contentPadding = PaddingValues(16.dp),
         modifier = modifier.fillMaxWidth()
     ) {
@@ -34,10 +39,11 @@ fun PrimaryButton(
 
 @Preview
 @Composable
-private fun PrimaryButtonPreview() {
+private fun PrimaryOutlinedButtonPreview() {
     CatalogAppTheme {
-        PrimaryButton(
+        PrimaryOutlinedButton(
             text = "Primary Button",
+            cornerRadius = 25.dp,
             onClick = { }
         )
     }

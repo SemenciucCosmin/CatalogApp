@@ -54,7 +54,7 @@ fun ListNavigationButton(
     )
 }
 
-@Preview(showSystemUi = true)
+@Preview
 @Composable
 private fun ListNavigationButtonEnabledPreview() {
     CatalogAppTheme {
@@ -67,7 +67,7 @@ private fun ListNavigationButtonEnabledPreview() {
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview
 @Composable
 private fun ListNavigationButtonDisabledPreview() {
     CatalogAppTheme {

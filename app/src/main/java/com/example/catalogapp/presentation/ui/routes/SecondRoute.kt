@@ -44,7 +44,6 @@ fun SecondRoute() {
             onDismissRequest = { showModalBottomSheet = false },
             dragHandle = { CatalogTopAppBar(title = "ModalBottomSheet") }
         ) {
-            
         }
     }
 }
