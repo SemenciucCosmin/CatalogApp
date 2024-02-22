@@ -15,7 +15,7 @@ import com.example.catalogapp.navigation.BottomNavigationBar
 import com.example.catalogapp.navigation.LocalNavController
 import com.example.catalogapp.navigation.NavigationDestination
 import com.example.catalogapp.navigation.NavigationGraph
-import com.example.catalogapp.presentation.ui.compoenents.CatalogTopAppBar
+import com.example.catalogapp.presentation.ui.components.CatalogTopAppBar
 
 @Composable
 fun CatalogApp() {

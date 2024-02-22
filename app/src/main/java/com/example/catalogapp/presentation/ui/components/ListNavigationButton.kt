@@ -1,4 +1,4 @@
-package com.example.catalogapp.presentation.ui.compoenents
+package com.example.catalogapp.presentation.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size

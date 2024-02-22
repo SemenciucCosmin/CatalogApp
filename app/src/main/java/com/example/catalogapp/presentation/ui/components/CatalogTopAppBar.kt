@@ -1,4 +1,4 @@
-package com.example.catalogapp.presentation.ui.compoenents
+package com.example.catalogapp.presentation.ui.components
 
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api

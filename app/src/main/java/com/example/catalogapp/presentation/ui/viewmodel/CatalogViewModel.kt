@@ -19,6 +19,7 @@ class CatalogViewModel : ViewModel() {
                     rating = Random.nextInt(0, 50).toFloat() / 10,
                     type = ProductType.TYPE_3,
                     expiringDate = getRandomDate(),
+                    price = "$${Random.nextInt(0, 50).toFloat() / 10}",
                     isNew = Random.nextBoolean()
                 )
             )

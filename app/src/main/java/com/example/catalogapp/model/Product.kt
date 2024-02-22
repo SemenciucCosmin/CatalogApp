@@ -7,5 +7,6 @@ data class Product(
     val rating: Float,
     val type: ProductType,
     val expiringDate: String,
+    val price: String,
     val isNew: Boolean,
 )
