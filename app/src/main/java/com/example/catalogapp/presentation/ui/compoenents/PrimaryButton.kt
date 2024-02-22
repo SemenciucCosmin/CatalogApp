@@ -32,7 +32,7 @@ fun PrimaryButton(
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 private fun PrimaryButtonPreview() {
     CatalogAppTheme {

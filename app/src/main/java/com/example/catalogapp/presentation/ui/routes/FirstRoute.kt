@@ -11,7 +11,7 @@ fun FirstRoute(catalogViewModel: CatalogViewModel = viewModel()) {
 
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 private fun FirstRoutePreview(){
     CatalogAppTheme {

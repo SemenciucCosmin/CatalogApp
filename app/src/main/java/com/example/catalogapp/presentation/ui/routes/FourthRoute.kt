@@ -9,7 +9,7 @@ fun FourthRoute() {
 
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 private fun FourthRoutePreview(){
     CatalogAppTheme {
