@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.routes
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,13 +22,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.catalogapp.navigation.LocalSnackbarHostState
 import com.example.catalogapp.presentation.theme.CatalogAppTheme
 import com.example.catalogapp.presentation.ui.components.PrimaryButton
 import com.example.catalogapp.presentation.ui.components.SheetContent
 import com.example.catalogapp.presentation.ui.components.SmallPrimaryButton
 import com.example.catalogapp.utils.hideThenRun
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,6 +39,8 @@ fun SecondRoute() {
     val sheetState = rememberModalBottomSheetState()
     var showModalBottomSheet by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
+    val snackbarHostState = LocalSnackbarHostState.current
+    val context = LocalContext.current
 
     Column(
         verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
@@ -50,8 +56,17 @@ fun SecondRoute() {
         }
 
         SmallPrimaryButton(
-            text = "Click",
-            onClick = { showModalBottomSheet = true }
+            text = "Snackbar",
+            onClick = {
+                coroutineScope.launch {
+                    snackbarHostState.showSnackbar("Snackbar")
+                }
+            }
+        )
+
+        SmallPrimaryButton(
+            text = "Toast",
+            onClick = { Toast.makeText(context, "Toast", Toast.LENGTH_SHORT).show() }
         )
 
         Text(text = "Text used on non surface (Scaffold -> Column)")
