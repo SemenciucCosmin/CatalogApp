@@ -42,6 +42,8 @@ fun ThirdRoute(catalogViewModel: CatalogViewModel = viewModel()) {
     var currentTabIndex by remember { mutableIntStateOf(0) }
 
     Column {
+        Spacer(modifier = Modifier.height(16.dp))
+        
         ProductListItem2(product = products[0])
 
         Spacer(modifier = Modifier.height(16.dp))

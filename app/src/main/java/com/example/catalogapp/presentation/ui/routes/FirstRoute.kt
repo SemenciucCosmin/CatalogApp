@@ -1,6 +1,6 @@
 package com.example.catalogapp.presentation.ui.routes
 
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -25,7 +25,7 @@ fun FirstRoute(catalogViewModel: CatalogViewModel = viewModel()) {
             key = { it.id }
         ) { product ->
             ProductListItem2(product = product)
-            Divider(modifier = Modifier.padding(start = 90.dp))
+            Divider(modifier = Modifier.width(80.dp))
         }
     }
 }

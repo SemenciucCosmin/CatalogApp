@@ -2,11 +2,15 @@ package com.example.catalogapp.presentation.ui.routes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -22,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.example.catalogapp.presentation.theme.CatalogAppTheme
 import com.example.catalogapp.presentation.ui.components.PrimaryButton
 import com.example.catalogapp.presentation.ui.components.SheetContent
+import com.example.catalogapp.presentation.ui.components.SmallPrimaryButton
 import com.example.catalogapp.utils.hideThenRun
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,7 +37,7 @@ fun SecondRoute() {
     val coroutineScope = rememberCoroutineScope()
 
     Column(
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
@@ -44,7 +49,22 @@ fun SecondRoute() {
             )
         }
 
+        SmallPrimaryButton(
+            text = "Click",
+            onClick = { showModalBottomSheet = true }
+        )
+
         Text(text = "Text used on non surface (Scaffold -> Column)")
+
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            CircularProgressIndicator()
+            Switch(checked = false, onCheckedChange = {})
+            Switch(checked = true, onCheckedChange = {})
+        }
     }
     if (showModalBottomSheet) {
         ModalBottomSheet(
@@ -53,7 +73,7 @@ fun SecondRoute() {
             dragHandle = {
                 Text(
                     text = "ModalBottomSheet",
-                    modifier =Modifier.padding(16.dp)
+                    modifier = Modifier.padding(16.dp)
                 )
             }
         ) {

@@ -17,6 +17,7 @@ fun BottomNavigationBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
+    // NOTE: Add "tonalElevation = 0.dp" in order to have a clean container color (Surface color)
     NavigationBar {
         bottomNavigationItems.forEach { navigationItem ->
             NavigationBarItem(

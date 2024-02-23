@@ -1,11 +1,16 @@
 package com.example.catalogapp.presentation.ui.components
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ListItem
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.painter.Painter
@@ -26,16 +31,21 @@ fun ListNavigationButton(
     isEnabled: Boolean = true,
 ) {
     val modifier = if (isEnabled) {
-        Modifier.alpha(ENABLED_ALPHA_FACTOR).clickable { onClick() }
+        Modifier
+            .alpha(ENABLED_ALPHA_FACTOR)
+            .clickable { onClick() }
     } else {
         Modifier.alpha(DISABLED_ALPHA_FACTOR)
     }
 
-
-    ListItem(
-        modifier = modifier,
-        headlineContent = { Text(text = text) },
-        leadingContent = {
+    Surface(modifier = modifier) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
             icon?.let {
                 Icon(
                     painter = it,
@@ -43,15 +53,19 @@ fun ListNavigationButton(
                     modifier = Modifier.size(20.dp)
                 )
             }
-        },
-        trailingContent = {
+
+            Text(
+                text = text,
+                modifier = Modifier.weight(1f)
+            )
+
             Icon(
                 painter = painterResource(R.drawable.ic_navigation_arrow),
                 contentDescription = null,
                 modifier = Modifier.size(20.dp)
             )
-        },
-    )
+        }
+    }
 }
 
 @Preview
@@ -61,7 +75,7 @@ private fun ListNavigationButtonEnabledPreview() {
         ListNavigationButton(
             text = "Button",
             onClick = { },
-            icon = painterResource(R.drawable.ic_top_app_bar),
+            icon = null,
             isEnabled = true
         )
     }
