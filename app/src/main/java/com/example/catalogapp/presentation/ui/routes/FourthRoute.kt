@@ -36,7 +36,8 @@ fun FourthRoute() {
         ListNavigationButton(
             text = "Button 3",
             onClick = { },
-            icon = null
+            icon = null,
+            isEnabled = false
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -56,7 +57,8 @@ fun FourthRoute() {
         ListNavigationButton(
             text = "Button 6",
             onClick = { },
-            icon = painterResource(R.drawable.ic_third)
+            icon = painterResource(R.drawable.ic_third),
+            isEnabled = false
         )
     }
 }
