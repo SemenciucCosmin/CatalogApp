@@ -114,7 +114,7 @@ internal val DarkColorScheme = darkColorScheme(
 //    onSecondary = Color.Red,
 
     secondaryContainer = Color(0xFFA6A6A6), // Filter Chip
-    onSecondaryContainer = Color(0xFFF4F4F4),
+    onSecondaryContainer = Color(0xFFFFFFFF),
 
 //    tertiary = Color.Red,
 //    onTertiary = Color.Red,
@@ -122,10 +122,10 @@ internal val DarkColorScheme = darkColorScheme(
 //    tertiaryContainer = Color.Red,
 //    onTertiaryContainer = Color.Red,
 
-    background = Color(0xFF101010),
+    background = Color(0xFF000000),
     onBackground = Color(0xFFA6A6A6),
 
-    surface = Color(0xFF252525),
+    surface = Color(0xFF1D1D1D),
     onSurface = Color(0xFFF4F4F4),
 
     surfaceVariant = Color(0xFF6C6C6C), // Card, Text Field background,
@@ -143,7 +143,7 @@ internal val DarkColorScheme = darkColorScheme(
 //    onErrorContainer = Color.Red,
 
     outline = Color(0xFFA6A6A6), // Chip and switch outline
-    outlineVariant = Color(0xFF252525), // Divider
+    outlineVariant = Color(0xFF1D1D1D), // Divider
 
     scrim = Color(0xFF101010) // Modal Bottom Sheet behind background
 )
