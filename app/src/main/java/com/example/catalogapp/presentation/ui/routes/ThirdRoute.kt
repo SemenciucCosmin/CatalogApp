@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.catalogapp.R
@@ -35,20 +36,19 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ThirdRoute(catalogViewModel: CatalogViewModel = viewModel()) {
+    val uiState by catalogViewModel.uiState.collectAsStateWithLifecycle()
     val coroutineScope = rememberCoroutineScope()
-    val products = remember { catalogViewModel.getRandomProducts() }
-    val tabs = remember { catalogViewModel.getRandomTabs() }
-    val pagerState = rememberPagerState(pageCount = { tabs.size })
+    val pagerState = rememberPagerState(pageCount = { uiState.tabs.size })
     var currentTabIndex by remember { mutableIntStateOf(0) }
 
     Column {
         Spacer(modifier = Modifier.height(16.dp))
         
-        ProductListItem2(product = products[0])
+        ProductListItem2(product = uiState.products[0])
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        ProductListItem2(product = products[1])
+        ProductListItem2(product = uiState.products[1])
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -77,7 +77,7 @@ fun ThirdRoute(catalogViewModel: CatalogViewModel = viewModel()) {
             edgePadding = 0.dp,
             divider = {}
         ) {
-            tabs.forEachIndexed { index, tab ->
+            uiState.tabs.forEachIndexed { index, tab ->
                 Tab(
                     text = { Text(text = tab.name) },
                     selected = currentTabIndex == index,
@@ -93,7 +93,7 @@ fun ThirdRoute(catalogViewModel: CatalogViewModel = viewModel()) {
             state = pagerState,
             userScrollEnabled = false,
         ) {
-            val tab = tabs[it]
+            val tab = uiState.tabs[it]
 
             Column(
                 verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),

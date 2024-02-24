@@ -1,14 +1,35 @@
 package com.example.catalogapp.presentation.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.catalogapp.model.CatalogUiState
+import com.example.catalogapp.model.Category
 import com.example.catalogapp.model.Product
 import com.example.catalogapp.model.ProductType
 import com.example.catalogapp.model.Tab
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.util.UUID
 import kotlin.random.Random
 
 class CatalogViewModel : ViewModel() {
-    fun getRandomProducts() = List(99) {
+
+    private val _uiState = MutableStateFlow(
+        CatalogUiState(
+            categories = getRandomCategories(),
+            products = getRandomProducts(),
+            tabs = getRandomTabs(),
+        )
+    )
+    val uiState = _uiState.asStateFlow()
+
+    private fun getRandomCategories() = List(15) {
+        Category(
+            name = getRandomString(),
+            products = getRandomProducts()
+        )
+    }
+
+    private fun getRandomProducts() = List(99) {
         Product(
             id = UUID.randomUUID().toString(),
             iconUrl = "https://picsum.photos/200",
@@ -21,7 +42,7 @@ class CatalogViewModel : ViewModel() {
         )
     }
 
-    fun getRandomTabs() = List(6) {
+    private fun getRandomTabs() = List(6) {
         Tab(
             name = getRandomString(),
             title = getRandomString(),
