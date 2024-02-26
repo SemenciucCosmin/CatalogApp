@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.routes
 
+import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -115,6 +116,7 @@ fun ThirdRoute(catalogViewModel: CatalogViewModel = viewModel()) {
 }
 
 @Preview(showSystemUi = true)
+@Preview(showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ThirdRoutePreview() {
     CatalogAppTheme {

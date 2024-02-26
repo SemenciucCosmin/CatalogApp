@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -69,6 +70,7 @@ fun ListNavigationButton(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ListNavigationButtonEnabledPreview() {
     CatalogAppTheme {
@@ -82,6 +84,7 @@ private fun ListNavigationButtonEnabledPreview() {
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ListNavigationButtonDisabledPreview() {
     CatalogAppTheme {

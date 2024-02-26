@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -32,6 +33,7 @@ fun SmallPrimaryButton(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun SmallPrimaryButtonPreview() {
     CatalogAppTheme {

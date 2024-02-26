@@ -16,7 +16,7 @@ class CatalogViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(
         CatalogUiState(
             categories = getRandomCategories(),
-            products = getRandomProducts(),
+            products = getRandomProducts(99),
             tabs = getRandomTabs(),
         )
     )
@@ -24,12 +24,13 @@ class CatalogViewModel : ViewModel() {
 
     private fun getRandomCategories() = List(15) {
         Category(
+            id = UUID.randomUUID().toString(),
             name = getRandomString(),
-            products = getRandomProducts()
+            products = getRandomProducts(8)
         )
     }
 
-    private fun getRandomProducts() = List(99) {
+    private fun getRandomProducts(count: Int) = List(count) {
         Product(
             id = UUID.randomUUID().toString(),
             iconUrl = "https://picsum.photos/200",

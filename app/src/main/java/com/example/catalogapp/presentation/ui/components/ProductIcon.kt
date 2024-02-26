@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -37,6 +38,7 @@ fun ProductIcon(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ProductIconPreview() {
     CatalogAppTheme {

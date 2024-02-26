@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,6 +39,7 @@ fun PrimaryOutlinedButton(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun PrimaryOutlinedButtonPreview() {
     CatalogAppTheme {

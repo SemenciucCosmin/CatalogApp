@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
@@ -39,6 +40,7 @@ fun ProductListItem(product: Product) {
 
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ProductListItemPreview() {
     CatalogAppTheme {
@@ -58,6 +60,7 @@ private fun ProductListItemPreview() {
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun NewProductListItemPreview() {
     CatalogAppTheme {
