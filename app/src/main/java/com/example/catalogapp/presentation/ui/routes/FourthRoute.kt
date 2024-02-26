@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.routes
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -64,6 +65,7 @@ fun FourthRoute() {
 }
 
 @Preview(showSystemUi = true)
+@Preview(showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun FourthRoutePreview() {
     CatalogAppTheme {

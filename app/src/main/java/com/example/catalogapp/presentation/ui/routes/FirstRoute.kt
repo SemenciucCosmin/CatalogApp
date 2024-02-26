@@ -1,19 +1,16 @@
 package com.example.catalogapp.presentation.ui.routes
 
-import androidx.compose.foundation.layout.width
+import android.content.res.Configuration
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.catalogapp.presentation.theme.CatalogAppTheme
-import com.example.catalogapp.presentation.ui.components.ProductListItem2
+import com.example.catalogapp.presentation.ui.components.CategoryListItem
 import com.example.catalogapp.presentation.ui.viewmodel.CatalogViewModel
 
 @Composable
@@ -22,16 +19,16 @@ fun FirstRoute(catalogViewModel: CatalogViewModel = viewModel()) {
 
     LazyColumn(state = rememberLazyListState()) {
         items(
-            items = uiState.products,
+            items = uiState.categories,
             key = { it.id }
-        ) { product ->
-            ProductListItem2(product = product)
-            Divider(modifier = Modifier.width(80.dp))
+        ) { categories ->
+            CategoryListItem(category = categories)
         }
     }
 }
 
 @Preview(showSystemUi = true)
+@Preview(showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun FirstRoutePreview() {
     CatalogAppTheme {

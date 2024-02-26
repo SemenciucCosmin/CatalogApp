@@ -1,5 +1,6 @@
 package com.example.catalogapp.presentation.ui.routes
 
+import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -104,6 +105,7 @@ fun SecondRoute() {
 }
 
 @Preview(showSystemUi = true)
+@Preview(showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun SecondRoutePreview() {
     CatalogAppTheme {
