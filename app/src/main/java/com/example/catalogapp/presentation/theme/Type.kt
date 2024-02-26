@@ -7,16 +7,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 /**
- * 600, 28, 34: HomeScreen FeaturedApps
- * 600, 20, 25: App details name, Category name
- * @ 600, 17, 22: AppBarTitle, Refund message
- * @ 600, 15, 20: Tab
+ * HM 600, 28, 34: HomeScreen FeaturedApps
+ * HS 600, 20, 25: App details name, Category name
+ * TL 600, 17, 22: AppBarTitle, Refund message
+ * TS 600, 15, 20: Tab
  *
- * 400, 20, 25: AppDetails "Description" "Additional Information", About Dev
- * 400, 17, 22: LineNavButton, OutlinedButton, TextField, TopBar TextButton, PrimaryButton
- * @ 400, 15, 20: AppItem Title, Empty screen message (on bg), AppDetails description, TextButton, AboutDev details, Snackbar
- * @ 400, 13, 18: Text on background (MyAccount), Chips, AppDetails line details,
- * 400, 11, 13: AppItem details, BottomBar text
+ *  ? / LM 400, 20, 25: AppDetails "Description" "Additional Information", About Dev
+ *  ? / LS 400, 17, 22: LineNavButton, OutlinedButton, TextField, TopBar TextButton, PrimaryButton
+ * BL / BL 400, 15, 20: AppItem Title, Empty screen message (on bg), AppDetails description, TextButton, AboutDev details, Snackbar
+ * LL / BM 400, 13, 18: Text on background (MyAccount), Chips, AppDetails line details,
+ * LM / BS 400, 11, 13: AppItem details, BottomBar text
  */
 val Typography = Typography(
     bodyLarge = TextStyle( // Plain text, Button text, seems like the most used style
@@ -33,6 +33,13 @@ val Typography = Typography(
         lineHeight = 18.sp,
         letterSpacing = 0.1.sp
     ),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 11.sp,
+        lineHeight = 13.sp,
+        letterSpacing = 0.5.sp
+    ),
     titleLarge = TextStyle( // TopAppBar title
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.SemiBold,
@@ -40,6 +47,13 @@ val Typography = Typography(
         lineHeight = 22.sp,
         letterSpacing = 0.0.sp
     ),
+//    titleMedium = TextStyle(
+//        fontFamily = FontFamily.Default,
+//        fontWeight = FontWeight.SemiBold,
+//        fontSize = 20.sp,
+//        lineHeight = 25.sp,
+//        letterSpacing = 0.2.sp
+//    ),
     titleSmall = TextStyle( // Tabs
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.SemiBold,

@@ -96,7 +96,7 @@ internal val LightColorScheme = lightColorScheme(
 //    onErrorContainer = Color.Red,
 
     outline = Color(0xFF6C6C6C), // Chip and switch outline
-    outlineVariant = Color(0xFFFFFFFF), // Divider
+    outlineVariant = Color(0xFFEFEFEF), // Divider
 
     scrim = Color(0xFF101010) // Modal Bottom Sheet behind background
 )
@@ -143,7 +143,7 @@ internal val DarkColorScheme = darkColorScheme(
 //    onErrorContainer = Color.Red,
 
     outline = Color(0xFFA6A6A6), // Chip and switch outline
-    outlineVariant = Color(0xFF1D1D1D), // Divider
+    outlineVariant = Color(0xFF000000), // Divider
 
     scrim = Color(0xFF101010) // Modal Bottom Sheet behind background
 )
