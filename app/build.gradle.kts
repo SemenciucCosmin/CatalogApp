@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.detekt)
 }
 
@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {
@@ -81,17 +81,15 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
 
+    // KOTLINX
+    implementation(libs.kotlinx.serialization.json)
+
     // NAVIGATION
     implementation(libs.navigation.compose)
 
     // RETROFIT
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.converter.moshi)
-
-    // ROOM
-    ksp(libs.room.compiler)
-    implementation(libs.room.ktx)
-    implementation(libs.room.runtime)
 
     // PERMISSIONS
     implementation(libs.google.accompanist.permissions)

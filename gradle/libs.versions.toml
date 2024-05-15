@@ -1,42 +1,41 @@
 [versions]
 # ANDROIDX
-androidx-activity-compose = "1.8.2"
+androidx-activity-compose = "1.9.0"
 androidx-constraintlayout = "1.0.1"
-androidx-core-ktx = "1.12.0"
-androidx-lifecycle-runtime = "2.6.2"
-androidx-navigation-runtime-ktx = "2.7.6"
+androidx-core-ktx = "1.13.1"
+androidx-lifecycle-runtime = "2.8.0"
+androidx-navigation-runtime-ktx = "2.7.7"
 
 # CAMERA
-androidx-camera = "1.4.0-alpha03"
+androidx-camera = "1.4.0-beta01"
 barcode-scanning = "17.2.0"
 
 # COIL
-coil-compose = "2.4.0"
+coil-compose = "2.5.0"
 
 # COMPOSE
-compose-bom = "2023.10.01"
+compose-bom = "2024.05.00"
 
 # KOIN
 koin-android = "3.5.0"
 koin-compose = "3.5.0"
 
+# KOTLINX
+kotlinx-serialization = "1.6.3"
+
 # NAVIGATION
-navigation-compose = "2.7.6"
+navigation-compose = "2.8.0-beta01"
 
 # PERMISSIONS
 accompanist-permissions = "0.33.2-alpha"
 
 # PLUGINS
-android-gradle-plugin = "8.1.0"
+android-gradle-plugin = "8.3.0"
 detekt = "1.23.1"
-google-ksp = "1.9.10-1.0.13"
-kotlin-android = "1.9.10"
+kotlin-android = "1.9.24"
 
 # RETROFIT
-retrofit2 = "2.9.0"
-
-# ROOM
-room = "2.6.1"
+retrofit2 = "2.11.0"
 
 # TEST
 junit = "4.13.2"
@@ -74,6 +73,9 @@ compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin-android" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin-compose" }
 
+# KOTLINX
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization"}
+
 # NAVIGATION
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
 
@@ -84,11 +86,6 @@ google-accompanist-permissions = { group = "com.google.accompanist", name = "acc
 retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2" }
 retrofit2-converter-moshi = {group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit2"}
 
-# ROOM
-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
-
 # TEST
 test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "test-espresso-core" }
 test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "test-ext" }
@@ -97,10 +94,9 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
-android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
-google-ksp = { id = "com.google.devtools.ksp", version.ref = "google-ksp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-android" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-android" }
 
 
 [bundles]
